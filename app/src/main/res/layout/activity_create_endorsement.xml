@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryDark"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_8"
+                    android:onClick="closeActivity"
+                    android:src="@drawable/ic_baseline_arrow_white"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:contentDescription="@string/back_screen" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/create_endorsement"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="@dimen/activity_header_title_font_size"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:src="@drawable/ic_ktr"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:contentDescription="@string/back_screen"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:id="@+id/create_contact_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/create_activity_for_contact_background_color">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/margin_10"
+                    android:text="@string/endorsement_entry"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:id="@+id/create_contact_company_name_title"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/endorsement_no"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                    <EditText
+                        android:id="@+id/ed_endorse_num"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.62"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:hint="@string/enter_endorsement_no"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapWords|textCapSentences"
+                        android:maxLength="90"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/date"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                    <TextView
+                        android:id="@+id/ed_date"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/margin_35"
+                        android:layout_weight="0.62"
+                        android:background="@drawable/spinner_popup_background"
+                        android:gravity="center_vertical"
+                        android:hint="@string/select_date"
+                        android:maxLength="50"
+                        android:padding="@dimen/margin_7"
+                        android:textColor="@color/black"
+                        android:textIsSelectable="false"
+                        android:textSize="@dimen/text_size_15"
+                        app:drawableRightCompat="@drawable/ic_baseline_date_range" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_45"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/status"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                    <Spinner
+                        android:id="@+id/sp_status"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.62"
+                        android:background="@drawable/spinner_background"
+                        android:dropDownVerticalOffset="@dimen/margin_40"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_5"
+                        android:popupBackground="@drawable/spinner_popup_background"
+                        android:popupElevation="0dp"
+                        android:tag="1" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/upload_file"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                    <Button
+                        android:id="@+id/create_ticket_attach_file"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/margin_40"
+                        android:layout_weight="0.62"
+                        android:background="@drawable/button_background_choose_file"
+                        android:gravity="center_vertical"
+                        android:hint="@string/choose_file"
+                        android:paddingLeft="@dimen/margin_10"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15"
+                        android:paddingStart="@dimen/margin_10" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/create_ticket_selected_file_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.62">
+                        <ImageView
+                            android:id="@+id/create_ticket_cancel_attachment"
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="@dimen/margin_25"
+                            android:layout_centerVertical="true"
+                            android:onClick="cancelFileSelection"
+                            android:padding="@dimen/margin_5"
+                            android:src="@drawable/close" />
+
+                        <TextView
+                            android:id="@+id/create_ticket_selected_file_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin_25"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/create_ticket_cancel_attachment"
+                            android:ellipsize="middle"
+                            android:hint="@string/selected_file_jpeg"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_15"
+                            android:layout_toEndOf="@+id/create_ticket_cancel_attachment" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/create_contact_primary_details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/margin_10"
+                    android:text="@string/reference_info"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_15"
+                    android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/create_contact_first_name_title"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/referenced_by"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+
+                    <EditText
+                        android:id="@+id/ed_referenced_by"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.62"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionNext"
+                        android:hint="@string/enter_referenced_by"
+                        android:inputType="textCapWords|textCapSentences"
+                        android:maxLength="50"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:id="@+id/create_contact_last_name_title"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/reference_phone"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/margin_15" />
+                    <EditText
+                        android:id="@+id/ed_reference_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.62"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionNext"
+                        android:hint="@string/enter_reference_phone"
+                        android:inputType="phone"
+                        android:maxLength="50"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/create_contact_contact_details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/margin_10"
+                    android:text="@string/petition_info"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_15"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_45"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/petitioner_type"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+
+                    <Spinner
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.62"
+                        android:id="@+id/sp_petitioner"
+                        android:background="@drawable/spinner_background"
+                        android:dropDownVerticalOffset="@dimen/margin_40"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_5"
+                        android:popupBackground="@drawable/spinner_popup_background"
+                        android:popupElevation="0dp"
+                        android:tag="1" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_45"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:id="@+id/layout_minister"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/petitioner_name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                    <Spinner
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.62"
+                        android:id="@+id/sp_minister"
+                        android:background="@drawable/spinner_background"
+                        android:dropDownVerticalOffset="@dimen/margin_40"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_5"
+                        android:popupBackground="@drawable/spinner_popup_background"
+                        android:popupElevation="0dp"
+                        android:tag="1" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:id="@+id/layout_petition"
+                    android:visibility="gone"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:id="@+id/create_contact_email_id_title"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/petitioner_name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.62"
+                        android:id="@+id/ed_petitioner_name"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionNext"
+                        android:hint="@string/enter_petitioner_name"
+                        android:inputType="textCapWords|textCapSentences"
+                        android:maxLength="70"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/petitioner_phone"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/margin_15" />
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.62"
+                        android:id="@+id/ed_petitioner_phone"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionNext"
+                        android:hint="@string/enter_petitioner_phone"
+                        android:inputType="phone"
+                        android:maxLength="70"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/department"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                    <Spinner
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.62"
+                        android:id="@+id/sp_department"
+                        android:background="@drawable/spinner_background"
+                        android:dropDownVerticalOffset="@dimen/margin_40"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_5"
+                        android:popupBackground="@drawable/spinner_popup_background"
+                        android:popupElevation="0dp"
+                        android:tag="1" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/endorsed_officer"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/margin_15" />
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.62"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:id="@+id/ed_endorse_officer"
+                        android:hint="@string/enter_endorsed_officer"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapWords|textCapSentences"
+                        android:maxLength="50"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_45"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/reply_received"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                    <Spinner
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.62"
+                        android:id="@+id/sp_reply"
+                        android:background="@drawable/spinner_background"
+                        android:dropDownVerticalOffset="@dimen/margin_40"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_5"
+                        android:popupBackground="@drawable/spinner_popup_background"
+                        android:popupElevation="0dp"
+                        android:tag="1" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/create_contact_address_details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/margin_10"
+                    android:text="@string/address"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_15"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="Address :"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                    <EditText
+                        android:id="@+id/ed_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.62"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:hint="@string/enter_address"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapWords|textCapSentences"
+                        android:maxLength="50"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:id="@+id/create_contact_city_title"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/hamlet"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                    <EditText
+                        android:id="@+id/ed_hamlet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.62"
+                        android:hint="@string/enter_hamlet"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapWords|textCapSentences"
+                        android:maxLength="50"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_45"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/district"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                    <Spinner
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.62"
+                        android:id="@+id/sp_district"
+                        android:background="@drawable/spinner_background"
+                        android:dropDownVerticalOffset="@dimen/margin_40"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_5"
+                        android:popupBackground="@drawable/spinner_popup_background"
+                        android:popupElevation="0dp"
+                        android:tag="1" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_45"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/mandal"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                    <Spinner
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.62"
+                        android:id="@+id/sp_mandel"
+                        android:background="@drawable/spinner_background"
+                        android:dropDownVerticalOffset="@dimen/margin_40"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_5"
+                        android:popupBackground="@drawable/spinner_popup_background"
+                        android:popupElevation="0dp"
+                        android:tag="1" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_45"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.38"
+                        android:gravity="center_vertical"
+                        android:text="@string/village"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_15" />
+                    <Spinner
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.62"
+                        android:id="@+id/sp_village"
+                        android:background="@drawable/spinner_background"
+                        android:dropDownVerticalOffset="@dimen/margin_40"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_5"
+                        android:popupBackground="@drawable/spinner_popup_background"
+                        android:popupElevation="0dp"
+                        android:tag="1" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_separator_color" />
+            </LinearLayout>
+            <EditText
+                android:id="@+id/ed_petitionDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:background="@drawable/spinner_popup_background"
+                android:gravity="top|left"
+                android:hint="@string/enter_petition_details_here"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine|textCapWords|textCapSentences"
+                android:lines="8"
+                android:maxLines="20"
+                android:minLines="6"
+                android:padding="@dimen/margin_7"
+                android:scrollbars="vertical"
+                android:textColor="@color/black"
+                android:textSize="@dimen/create_contact_text_font_size" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_200"
+                android:visibility="gone"
+                android:id="@+id/card_view"
+                android:layout_margin="@dimen/margin_10"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="10dp">
+                <ImageView
+                    android:id="@+id/viewImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_baseline_image" />
+            </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_5">
+                <Button
+                    android:id="@+id/create_contact_reset_button"
+                    android:layout_width="150dp"
+                    android:layout_height="?actionBarSize"
+                    android:background="@drawable/btn_rounded_primary"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5"
+                    android:text="@string/cancel"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_15"
+                    android:textStyle="bold" />
+                <Button
+                    android:id="@+id/create_contact_save_button"
+                    android:layout_width="150dp"
+                    android:layout_height="?actionBarSize"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:background="@drawable/btn_rounded"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5"
+                    android:text="@string/save"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_15"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

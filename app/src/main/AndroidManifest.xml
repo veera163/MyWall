@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.frazen.edaftar">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
+    <application
+        android:name="com.frazen.edaftar.MyWall"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_ktr"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/ic_ktr"
+        android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:allowClearUserData="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/AppTheme"
+        tools:targetApi="n">
+        <activity android:name="com.frazen.edaftar.Activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.frazen.edaftar.Activity.LoginActivity"
+            android:theme="@style/AppTheme" />
+
+        <activity android:name="com.frazen.edaftar.Activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.frazen.edaftar.Activity.CreateEndorsementActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.frazen.edaftar.Activity.CreateMeetingActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.frazen.edaftar.Activity.DashBoardActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.frazen.edaftar.Activity.UpdateEndorsementActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.frazen.edaftar.Activity.GrievanceActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.frazen.edaftar.Activity.ReimbrusementAndLocActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.frazen.edaftar.Activity.PeshiActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.frazen.edaftar.Activity.EndorsementActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.frazen.edaftar.Activity.LettersAndNotesActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.frazen.edaftar.Activity.ViewPeshiActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.frazen.edaftar.Activity.ViewLetterAndNotesActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.frazen.edaftar.Activity.ViewReimbrusementAndLocActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.frazen.edaftar.Activity.ViewGrivanceActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+    </application>
+
+</manifest>

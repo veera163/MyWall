@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashboard"
+            android:title="@string/dash_board"
+            android:fontFamily="sans-serif-condensed"
+            android:icon="@drawable/ic_baseline_dashboard"/>
+        <item
+            android:id="@+id/meeting"
+            android:title="@string/meetings"
+            android:icon="@drawable/ic_baseline_meeting_room"
+            android:fontFamily="sans-serif-condensed"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/endorsement"
+            android:title="@string/endorsement"
+            android:fontFamily="sans-serif-condensed"
+            android:icon="@drawable/ic_baseline_mail"/>
+
+    </group>
+    <item android:title="@string/communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:title="@string/share_location"
+                android:icon="@drawable/ic_baseline_share"
+                android:fontFamily="sans-serif-condensed"/>
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,188 @@
+<resources>
+    <string name="app_name">E-daftar</string>
+    <string name="password">PASSWORD</string>
+    <string name="user_name">USER NAME</string>
+    <string name="sign_in">LOG IN</string>
+    <string name="l_o_g_i_n">L O G I N</string>
+    <string name="forget_password">FORGET PASSWORD</string>
+    <string name="share_location">Share Location</string>
+    <string name="exit">Exit</string>
+    <string name="logout">Logout</string>
+    <string name="caption">Hon\'ble Minister for MA &amp; UD, Industries &amp; Commerce, Information Technology, Electronics &amp; Communications Government of Telangana</string>
+    <string name="name">Name :</string>
+    <string name="day_view">Day View</string>
+    <string name="week_view">Week View</string>
+    <string name="ic_calender">calender icon</string>
+    <string name="error_field_required">This field is required</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="dash_board">Dashboard</string>
+    <string name="meetings">Meetings</string>
+    <string name="communicate">Communicate</string>
+    <string name="show_password">Show Password</string>
+    <string name="endorsement">Endorsement</string>
+    <string name="search">Search …</string>
+    <string name="endorsement_entry">Endorsement - Entry</string>
+    <string name="enter_petition_details_here">Enter Petition Details Here</string>
+    <string name="status">Status :</string>
+    <string name="txt_pending">Pending : %d</string>
+    <string name="txt_new">New : %d</string>
+
+    <string name="txt_process">Under Process : %d</string>
+    <string name="txt_solved">Solved : %d</string>
+    <string name="txt_closed">Closed : %d</string>
+    <string name="txt_total">Total : %d</string>
+    <string name="txt_sanctioned">Sanctioned : %d</string>
+    <string name="txt_rejected">Rejected : %d</string>
+    <string name="txt_approved">Approved : %d</string>
+    <string name="txt_lie">Lie Over : %d</string>
+    <string name="txt_return">Returned : %d</string>
+
+    <string name="txt_dispatched">Dispatched : %d</string>
+    <string name="txt_hold">Hold : %d</string>
+
+    <string name="grievances_status">Grievances - Status</string>
+    <string name="endorsement_no">Endorsement :</string>
+    <string name="enter_endorsement_no">Enter Endorsement No</string>
+    <string name="date">Date :</string>
+    <string name="select_date">Select Date</string>
+    <string name="upload_file">Upload File :</string>
+    <string name="choose_file">Choose File</string>
+    <string name="selected_file_jpeg">Selected File.jpeg</string>
+    <string name="reference_info">Reference Info</string>
+    <string name="referenced_by">Referenced by :</string>
+    <string name="enter_referenced_by">Enter Referenced by</string>
+    <string name="reference_phone">Reference Phone :</string>
+    <string name="enter_reference_phone">Enter Reference Phone</string>
+    <string name="petition_info">Petition info</string>
+    <string name="petitioner_type">Petitioner type :</string>
+    <string name="petitioner_name">Petitioner name :</string>
+    <string name="enter_petitioner_name">Enter Petitioner name</string>
+    <string name="petitioner_phone">Petitioner phone :</string>
+    <string name="enter_petitioner_phone">Enter Petitioner phone</string>
+    <string name="department">Department :</string>
+    <string name="enter_department">Enter Department</string>
+    <string name="endorsed_officer">Endorsed Officer :</string>
+    <string name="enter_endorsed_officer">Enter Endorsed Officer</string>
+    <string name="reply_received">Reply Received :</string>
+    <string name="address">Address</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="hamlet">Hamlet :</string>
+    <string name="enter_hamlet">Enter Hamlet</string>
+    <string name="district">District :</string>
+    <string name="mandal">Mandal :</string>
+    <string name="village">Village :</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="update">Update</string>
+    <string name="reply_res">Reply.res :</string>
+    <string name="phone_no">Phone :</string>
+    <string name="pet_type">Pet.Type :</string>
+    <string name="petition_details">Petition Details :</string>
+    <string name="title">Title :</string>
+    <string name="enter_title">Enter Title</string>
+    <string name="meeting_type">Meeting Type :</string>
+    <string name="created_by">Created by :</string>
+    <string name="enter_created_by">enter Created by</string>
+    <string name="agenda">Agenda :</string>
+    <string name="start_date">Date :</string>
+    <string name="time">Time</string>
+    <string name="end_date">End Date :</string>
+    <string name="hint_date">Date</string>
+    <string name="start_time">Start Time</string>
+    <string name="end_time">End Time</string>
+    <string name="back_screen">back screen</string>
+    <string name="reimbursement_status">Reimbursement - Status</string>
+    <string name="remarks">Remarks :</string>
+    <string name="update_meeting">Update Meeting</string>
+    <string name="create_meeting">Create Meeting</string>
+    <string name="update_endorsement">Update Endorsement</string>
+    <string name="create_endorsement">Create Endorsement</string>
+    <string name="full_name">Sri K.T Rama Rao</string>
+    <string name="loc_status">LOC - Status</string>
+    <string name="peshi_files_status">Peshi-Files - Status</string>
+    <string name="endorsement_status">Endorsement - Status</string>
+    <string name="letters_status">Letters - Status</string>
+    <string name="do_s_status">DOs - Status</string>
+    <string name="error_invalid_phone">This Phone Number is invalid</string>
+    <string name="grievance_no">Grievance :</string>
+    <string name="beneficiary">Beneficiary :</string>
+    <string name="assigmed_to">Assigmed To :</string>
+    <string name="file_no">File :</string>
+    <string name="relation">Relation :</string>
+    <string name="patient_name">Patient Name :</string>
+    <string name="subject">Subject :</string>
+    <string name="lonno">Letter No :</string>
+    <string name="peshi_file">Peshi File</string>
+    <string name="received_from">Received From :</string>
+    <string name="received_date">Received Date :</string>
+    <string name="return_to">Return To :</string>
+    <string name="return_date">Return Date :</string>
+    <string name="minister_remarks">Minister Remarks</string>
+    <string name="category">Category :</string>
+    <string name="letters_and_notes">Letters and Notes</string>
+    <string name="file_location">File Location :</string>
+    <string name="address_to">Address To :</string>
+    <string name="dispatch_mode">Dispatch Mode :</string>
+    <string name="letter_notes_do_letter_details">Letter / Notes/ DO Letter Details</string>
+    <string name="cmrf_entry">CMRF - Entry</string>
+    <string name="applicant_info">Applicant Info</string>
+    <string name="applicant_name">Applicant Name :</string>
+    <string name="father">Father :</string>
+    <string name="sex">Sex :</string>
+    <string name="age">Age :</string>
+    <string name="aadhar">Aadhar</string>
+    <string name="treatment_info">Treatment Info</string>
+    <string name="problem">Problem :</string>
+    <string name="hospital">Hospital :</string>
+    <string name="hospital_address">Address :</string>
+    <string name="treatment_amount">Amount :</string>
+    <string name="sanctioned_details">Sanctioned Details</string>
+    <string name="source">Source :</string>
+    <string name="organization">Organization :</string>
+    <string name="minister_tweet">Minister Tweet</string>
+    <string name="gist_of_case">Gist Of Case :</string>
+    <string name="twitter_link">Twitter Link :</string>
+    <string name="solution">Solution</string>
+    <string name="contact_info">Contact Info</string>
+    <string name="person">Person :</string>
+    <string name="relation_to_contact">Relation to Contact :</string>
+    <string name="person_phone">Person Phone :</string>
+    <string name="contact_name">Contact Name :</string>
+    <string name="contact_phone">Contact Phone :</string>
+    <string name="email_id">Email id :</string>
+    <string name="grievance">Grievance</string>
+    <string name="number">Number :</string>
+    <string name="type">Type :</string>
+    <string name="cheque_no">Cheque No :</string>
+
+    <!--    <string-array name="status_array">
+            <item>Select</item>
+            <item>Hold</item>
+            <item>Dispatched</item>
+            <item>New</item>
+            <item>Lie Over</item>
+            <item>Pending</item>
+        </string-array>
+
+        <string-array name="Petition_array">
+            <item>Select</item>
+            <item>General</item>
+            <item>MINISTER</item>
+            <item>MLA</item>
+            <item>MLC</item>
+            <item>MP - Lok Sabha</item>
+            <item>MP - Rajya Sabha</item>
+            <item>Others</item>
+        </string-array>-->
+
+    <string-array name="reply_array">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+</resources>

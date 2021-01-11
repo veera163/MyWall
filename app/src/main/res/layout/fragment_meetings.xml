@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop=".5dp"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_45"
+        android:id="@+id/day_view"
+        android:background="@color/colorPrimary">
+        <RadioGroup
+            android:id="@+id/calendar_toggle_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:layout_marginLeft="@dimen/margin_15"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_toLeftOf="@+id/custom_date_icon"
+            android:background="@drawable/toggle_widget_outer_line"
+            android:checkedButton="@+id/rb_calendar_day_view"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <RadioButton
+                android:id="@+id/rb_calendar_day_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/toggle_widget_background"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/day_view"
+                android:textColor="@drawable/toggle_widget_text_color"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/rb_calendar_week_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/toggle_widget_background"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/week_view"
+                android:textColor="@drawable/toggle_widget_text_color"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/custom_date_icon"
+            android:layout_width="@dimen/margin_30"
+            android:layout_height="@dimen/margin_30"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/margin_3"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:layout_marginRight="@dimen/margin_8"
+            android:src="@drawable/icon_calendar_white"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+    <noman.weekcalendar.WeekCalendar
+        android:id="@+id/week_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/weekly_calendar_height"
+        app:dayNameLength="threeLetters"
+        android:layout_below="@+id/day_view"
+        app:daysTextColor="@color/white"
+        app:daysTextSize="@dimen/create_contact_text_font_size"
+        app:numOfPages="300"
+        app:todaysDateBgColor="@color/colorAccent"
+        app:selectedBgColor="@color/white"
+        app:weekTextColor="@color/white"
+        app:weekTextSize="@dimen/create_contact_text_font_size" />
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:id="@+id/view2"
+        android:layout_below="@+id/week_calendar"
+        android:background="@color/line_separator_color"
+        android:paddingTop="@dimen/margin_5" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_above="@+id/footer"
+        android:layout_alignParentRight="true"
+        android:scaleType="center"
+        android:id="@+id/fab"
+        android:layout_marginBottom="@dimen/margin_15"
+        android:layout_marginRight="@dimen/margin_15"
+        android:src="@drawable/ic_baseline_add"
+        app:borderWidth="1dp"
+        app:elevation="10dp"
+        app:layout_behavior="com.dev2qa.example.material_design.floatingactionbutton.FloatingActionButtonScrollBehavior"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/margin_15" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/meetings_list_view"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/view2"
+        android:layout_above="@+id/footer"
+        android:layout_height="match_parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/footer"
+        android:layout_height="@dimen/list_view_footer_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/calendar_left_nav_arrow"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="@dimen/margin_3"
+            android:clickable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_arrow_left_active"
+            android:tag="1"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/calendar_selected_date_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Tuesday April 17, 2018 (0 Events)"
+            android:textColor="@color/white"
+            android:textSize="@dimen/list_view_footer_title_font_size"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/calendar_right_nav_arrow"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/margin_5"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_arrow_right_active"
+            android:tag="2"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
